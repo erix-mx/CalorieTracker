@@ -15,6 +15,9 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/core_main" />
             <option value="$PROJECT_DIR$/core/core_presentation" />
+            <option value="$PROJECT_DIR$/onboarding" />
+            <option value="$PROJECT_DIR$/onboarding/onboarding_domain" />
+            <option value="$PROJECT_DIR$/onboarding/onboarding_presentation" />
           </set>
         </option>
       </GradleProjectSettings>

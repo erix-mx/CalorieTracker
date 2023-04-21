@@ -2,6 +2,7 @@ object Compose {
     object Versions {
         const val BOM = "2023.03.00"
         const val ACTIVITY = "1.7.1"
+        const val COMPILER = "1.4.2"
     }
 
     object Activity {
@@ -17,7 +18,9 @@ object Compose {
     }
 
     object Test {
-
+        const val JUNIT4 = "androidx.compose.ui:ui-test-junit4"
+        const val TOOLING = "androidx.compose.ui:ui-tooling"
+        const val MANIFEST = "androidx.compose.ui:ui-test-manifest"
     }
 
 }

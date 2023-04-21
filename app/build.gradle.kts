@@ -3,15 +3,15 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 android {
-    namespace = "com.erix.course.philipp.calorytracker"
-    compileSdk = 33
+    namespace = Project.namespace
+    compileSdk = Project.compileSdk
 
     defaultConfig {
-        applicationId = "com.erix.course.philipp.calorytracker"
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        applicationId   = Project.applicationId
+        minSdk          = Project.minSdk
+        targetSdk       = Project.targetSdk
+        versionCode =  Project.versionCode
+        versionName = Project.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -37,7 +37,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.2"
+        kotlinCompilerExtensionVersion = Compose.Versions.COMPILER
     }
 
     packagingOptions {
@@ -48,8 +48,15 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.10.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+
+    //Modules
+    implementation(project(Modules.CORE_UI))
+    implementation(project(Modules.ONBOARDING_PRESENTATION))
+
+
+    //AndroidX
+    implementation(AndroidX.Core.KTX)
+    implementation(AndroidX.Lifecycle.RUNTIME)
 
     //Compose
     implementation(Compose.Activity.COMPOSE)
@@ -59,11 +66,15 @@ dependencies {
     implementation(Compose.Ui.UI_TOOLING_PREVIEW)
     implementation(Compose.Ui.MATERIAL3)
 
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2022.10.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    //Test
+    testImplementation(Junit.Junit.JUNIT)
+    androidTestImplementation(Junit.Junit.JUNIT_EXT)
+
+    androidTestImplementation(Expresso.Core.EXPRESSO)
+
+    androidTestImplementation(platform(Compose.Ui.COMPOSE_BOM))
+    androidTestImplementation(Compose.Test.JUNIT4)
+
+    debugImplementation(Compose.Test.TOOLING)
+    debugImplementation(Compose.Test.MANIFEST)
 }
