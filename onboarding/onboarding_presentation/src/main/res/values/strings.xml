@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_title">!Welcome!</string>
+    <string name="welcome_subtitle">Let’s find out more about</string>
+    <string name="welcome_subtitle_bold">you</string>
+</resources>

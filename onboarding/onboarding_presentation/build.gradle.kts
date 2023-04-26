@@ -53,6 +53,9 @@ dependencies {
     implementation(AndroidX.Core.KTX)
     implementation(AndroidX.Lifecycle.RUNTIME)
 
+    //Lottie
+    implementation(Lottie.LOTTIE)
+
     //Compose
     implementation(Compose.Activity.COMPOSE)
     implementation(platform(Compose.Ui.COMPOSE_BOM))

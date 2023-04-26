@@ -50,6 +50,7 @@ android {
 dependencies {
 
     //Modules
+    implementation(project(Modules.CORE))
     implementation(project(Modules.CORE_UI))
     implementation(project(Modules.ONBOARDING_PRESENTATION))
 
@@ -65,6 +66,9 @@ dependencies {
     implementation(Compose.Ui.UI_GRAPHICS)
     implementation(Compose.Ui.UI_TOOLING_PREVIEW)
     implementation(Compose.Ui.MATERIAL3)
+
+    //Accompanist
+    implementation(Accompanist.SystemUiController.SYSTEM_CONTROLLER)
 
     //Test
     testImplementation(Junit.Junit.JUNIT)

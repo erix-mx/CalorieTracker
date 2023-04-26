@@ -2,10 +2,10 @@ package com.erix.course.philipp.calorytracker.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
-
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+val avocadoBlue = Color(0xFF4B8AE9)
+val avocadoGreen = Color(0xFF55E57D)
+val avocadoGreenLight = Color(0xFFBFF6CF)
+val avocadoDark = Color(0xFF1E211E)
+val avocadoGray = Color(0x33E3FBE9)
+val avocadoLight = Color(0xFFD9F4E1)
+val avocadoLighter = Color(0xFFF3FFF7)

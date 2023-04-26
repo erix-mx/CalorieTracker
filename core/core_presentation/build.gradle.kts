@@ -42,10 +42,20 @@ android {
 dependencies {
 
     //Compose
+    implementation(Compose.Activity.COMPOSE)
     implementation(platform(Compose.Ui.COMPOSE_BOM))
     implementation(Compose.Ui.UI)
+    implementation(Compose.Ui.UI_GRAPHICS)
+    implementation(Compose.Ui.UI_TOOLING_PREVIEW)
+    implementation(Compose.Ui.MATERIAL3)
+
+
 
     //Test
     testImplementation(Junit.Junit.JUNIT)
     androidTestImplementation(Junit.Junit.JUNIT_EXT)
+
+    //Debug
+    debugImplementation(Compose.Test.TOOLING)
+    debugImplementation(Compose.Test.MANIFEST)
 }

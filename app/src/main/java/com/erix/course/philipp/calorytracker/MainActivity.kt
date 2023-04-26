@@ -1,34 +1,34 @@
 package com.erix.course.philipp.calorytracker
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.erix.course.philipp.calorytracker.ui.theme.CaloryTrackerTheme
-import com.erix.course.philipp.onboarding_presentation.welcome.WelcomeScreen
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.LocalView
+import androidx.core.view.WindowCompat
+import com.erix.course.philipp.calorytracker.screens.NavScreen
+import com.erix.course.philipp.calorytracker.ui.theme.CalorieTrackerTheme
+import com.erix.course.philipp.calorytracker.ui.theme.avocadoGreenLight
+import com.erix.course.philipp.calorytracker.ui.theme.avocadoLighter
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            CaloryTrackerTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    WelcomeScreen {
 
-                    }
-                }
+        setContent {
+            CalorieTrackerTheme {
+                NavScreen()
             }
         }
     }
 }
+
+
 
