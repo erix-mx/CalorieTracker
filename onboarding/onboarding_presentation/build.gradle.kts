@@ -1,6 +1,9 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -25,8 +28,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     buildFeatures {
@@ -38,11 +41,18 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
 dependencies {
+
+    //Hilt
+    implementation(Hilt.ANDROID.android)
+    kapt(Hilt.COMPILER.compiler)
+
+    //Hilt Compose
+    implementation(Hilt.Fragment.navigation)
 
     //Modules
     implementation(project(Modules.CORE))
@@ -62,6 +72,7 @@ dependencies {
     implementation(Compose.Ui.UI)
     implementation(Compose.Ui.UI_GRAPHICS)
     implementation(Compose.Ui.UI_TOOLING_PREVIEW)
+    implementation(Compose.Ui.MATERIAL)
     implementation(Compose.Ui.MATERIAL3)
 
     //Test

@@ -9,29 +9,29 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.SideEffect
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.erix.course.philipp.core_main.utils.log
-import com.erix.course.philipp.core_presentation.Dimensions
-import com.erix.course.philipp.core_presentation.LocalSpacing
+import com.erix.course.philipp.core_main.utils.loge
+import com.erix.course.philipp.core_ui.Dimensions
+import com.erix.course.philipp.core_ui.LocalSpacing
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorScheme = darkColorScheme(
 
     primary = avocadoGreen,
-    secondary = avocadoGreenLight,
+    secondary = avocadoDark,
     tertiary = avocadoBlue,
-    background = Color.Yellow,
-    onSecondary = avocadoDark,
+    background = avocadoDark,
+    onSecondary = avocadoLight,
+    onSurface = avocadoGray,
 )
 
 private val LightColorScheme = lightColorScheme(
 
     primary = avocadoGreen,
-    secondary = avocadoGreenLight,
+    secondary = avocadoDark,
     tertiary = avocadoBlue,
     background = avocadoLighter,
     surface = avocadoLighter,
@@ -58,19 +58,19 @@ fun CalorieTrackerTheme(
 ) {
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            log { "Using dynamic color scheme" }
+            loge { "Using dynamic color scheme" }
             val context = LocalContext.current
             //if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context) //TODO: Add support for dynamic color scheme
             if (darkTheme) DarkColorScheme else LightColorScheme
         }
 
         darkTheme -> {
-            log { "Using darktheme" }
+            loge { "Using darktheme" }
             DarkColorScheme
         }
 
         else -> {
-            log { "Using lighttheme" }
+            loge { "Using lighttheme" }
             LightColorScheme
         }
     }
@@ -78,14 +78,14 @@ fun CalorieTrackerTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = avocadoLighter.toArgb()
+            window.statusBarColor = if (darkTheme) avocadoDark.toArgb() else avocadoLighter.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !darkTheme
         }
     }
 
     val systemUiController = rememberSystemUiController()
     systemUiController.setSystemBarsColor(
-        color = avocadoGreenLight,
+        color = if (darkTheme) avocadoDark else avocadoGreenLight,
         darkIcons = !darkTheme
     )
 

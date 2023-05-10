@@ -3,4 +3,20 @@
     <string name="welcome_title">!Welcome!</string>
     <string name="welcome_subtitle">Let’s find out more about</string>
     <string name="welcome_subtitle_bold">you</string>
+    <string name="welcome_button">Let\'s start</string>
+    <string name="age_title">What’s your age?</string>
+    <string name="age_description">Select your age to continue.</string>
+    <string name="gender_title">Gender</string>
+    <string name="gender_description">Select your gender to continue.</string>
+    <string name="tag_next">Next</string>
+    <string name="height_title">What’s your height?</string>
+    <string name="height_description">Select your height to continue.</string>
+    <string name="weight_title">What’s your weight?</string>
+    <string name="weight_description">Select your weight to continue.</string>
+    <string name="activity_description">What’s your activity level?</string>
+    <string name="activty_title">Activity</string>
+    <string name="goal_title">Goal</string>
+    <string name="goal_description">Do you want to lose, keep or gain weight?</string>
+    <string name="nutrient_title">Nutrient \ngoals</string>
+    <string name="nutrient_description">What are your nutrient goals?</string>
 </resources>
