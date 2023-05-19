@@ -1,6 +1,7 @@
 package com.erix.tracker_data.di
 
 import android.app.Application
+import android.content.Context
 import android.util.Log
 import androidx.room.Room
 import com.erix.tracker_data.local.TrackerDatabase
@@ -11,6 +12,7 @@ import com.erix.tracker_data.repository.TrackerRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -47,9 +49,9 @@ object TrackerDataModule {
 
     @Provides
     @Singleton
-    fun provideDatabase(app: Application): TrackerDatabase {
+    fun provideDatabase(@ApplicationContext context: Context): TrackerDatabase {
         return Room.databaseBuilder(
-            app,
+            context,
             TrackerDatabase::class.java,
             "tracker_db"
         ).build()
@@ -60,11 +62,9 @@ object TrackerDataModule {
     fun provideTrackerRepository(
         api: ApiOpenFoot,
         db: TrackerDatabase
-    ): TrackerRepository {
-        return TrackerRepositoryImpl(
-            trackerDao = db.trackerDao,
-            trackerApi = api
-        )
-    }
+    ): TrackerRepository = TrackerRepositoryImpl(
+        trackerDao = db.trackerDao,
+        trackerApi = api
+    )
 
 }

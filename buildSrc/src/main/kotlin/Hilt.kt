@@ -16,5 +16,4 @@ object Hilt {
         const val navigation = "androidx.hilt:hilt-navigation-compose:$version"
     }
 
-
 }

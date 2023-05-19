@@ -27,6 +27,15 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        compose = true
+    }
+    
+    composeOptions {
+        kotlinCompilerExtensionVersion = Compose.Versions.COMPILER
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -51,12 +60,11 @@ dependencies {
     implementation(project(Modules.CORE_UI))
     implementation(project(Modules.TRACKER_DOMAIN))
 
+
     //AndroidX
     implementation(AndroidX.Core.KTX)
     implementation(AndroidX.Lifecycle.RUNTIME)
 
-    //Lottie
-    implementation(Lottie.LOTTIE)
 
     //Compose
     implementation(Compose.Activity.COMPOSE)

@@ -18,12 +18,15 @@ include ':core'
 
 include ':core:core_main'
 include ':core:core_ui'
+
 include ':onboarding'
 include ':onboarding:onboarding_domain'
 include ':onboarding:onboarding_presentation'
+
 include ':tracker'
 include ':tracker:tracker_data'
-include ':models'
 include ':tracker:tracker_domain'
-
 include ':tracker:tracker_presentation'
+
+include ':models'
+

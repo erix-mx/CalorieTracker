@@ -58,19 +58,15 @@ fun CalorieTrackerTheme(
 ) {
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            loge { "Using dynamic color scheme" }
             val context = LocalContext.current
             //if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context) //TODO: Add support for dynamic color scheme
             if (darkTheme) DarkColorScheme else LightColorScheme
         }
-
         darkTheme -> {
-            loge { "Using darktheme" }
             DarkColorScheme
         }
 
         else -> {
-            loge { "Using lighttheme" }
             LightColorScheme
         }
     }

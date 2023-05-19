@@ -34,16 +34,27 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    kapt {
+        generateStubs = true
+    }
 }
 
 dependencies {
-
-    implementation(project(Modules.TRACKER_DATA))
-    implementation(project(Modules.MODELS))
-    implementation(project(Modules.CORE))
 
     //Hilt
     implementation(Hilt.ANDROID.android)
     kapt(Hilt.COMPILER.compiler)
 
+    implementation(project(Modules.TRACKER_DATA))
+    implementation(project(Modules.MODELS))
+    implementation(project(Modules.CORE))
+
+    //AndroidX
+    implementation(AndroidX.Core.KTX)
+    implementation(AndroidX.Lifecycle.RUNTIME)
+
+    //Test
+    testImplementation(Junit.Junit.JUNIT)
+    androidTestImplementation(Junit.Junit.JUNIT_EXT)
 }

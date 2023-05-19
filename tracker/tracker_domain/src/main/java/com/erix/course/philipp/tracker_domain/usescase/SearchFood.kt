@@ -1,4 +1,4 @@
-package com.erix.course.philipp.tracker_domain.case
+package com.erix.course.philipp.tracker_domain.usescase
 
 import com.erix.models.tracker.TrackableFood
 import com.erix.tracker_data.repository.TrackerRepository

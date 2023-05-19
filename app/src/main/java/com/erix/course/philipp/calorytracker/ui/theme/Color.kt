@@ -9,3 +9,5 @@ val avocadoDark = Color(0xFF1E211E)
 val avocadoGray = Color(0x33E3FBE9)
 val avocadoLight = Color(0xFFD9F4E1)
 val avocadoLighter = Color(0xFFF3FFF7)
+
+

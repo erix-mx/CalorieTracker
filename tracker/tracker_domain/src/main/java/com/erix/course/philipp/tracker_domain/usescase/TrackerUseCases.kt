@@ -1,4 +1,8 @@
-package com.erix.course.philipp.tracker_domain.case
+package com.erix.course.philipp.tracker_domain.usescase
+
+import com.erix.course.philipp.core_main.domain.preferences.Preferences
+import com.erix.course.philipp.core_main.utils.loge
+import javax.inject.Inject
 
 data class TrackerUseCases(
     val trackFood: TrackFood,

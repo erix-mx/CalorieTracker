@@ -1,4 +1,4 @@
-package com.erix.course.philipp.tracker_domain.case
+package com.erix.course.philipp.tracker_domain.usescase
 
 import com.erix.models.tracker.MealType
 import com.erix.models.tracker.TrackableFood
@@ -10,7 +10,6 @@ import kotlin.math.roundToInt
 class TrackFood(
     private val repository: TrackerRepository
 ) {
-
     suspend operator fun invoke(
         food: TrackableFood,
         amount: Int,

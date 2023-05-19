@@ -10,8 +10,9 @@ import com.erix.tracker_data.remote.ApiOpenFoot
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import java.time.LocalDate
+import javax.inject.Inject
 
-class TrackerRepositoryImpl(
+class TrackerRepositoryImpl (
     private val trackerApi: ApiOpenFoot,
     private val trackerDao: TrackerDao
 ) : TrackerRepository {

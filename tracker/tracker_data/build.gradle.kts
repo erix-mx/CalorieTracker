@@ -38,6 +38,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    kapt {
+        generateStubs = true
+    }
 }
 
 dependencies {
@@ -61,7 +65,8 @@ dependencies {
 
     //Room
     implementation(Room.runtime)
-    annotationProcessor(Room.compiler)
+    kapt(Room.compiler)
+    implementation(Room.ktx)
 
     ksp(Retrofit.MOCHI_CODEGEN)
 

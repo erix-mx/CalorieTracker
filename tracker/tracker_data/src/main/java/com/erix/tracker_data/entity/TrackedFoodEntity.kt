@@ -1,7 +1,8 @@
 package com.erix.tracker_data.entity
 
+import androidx.room.Entity
 import androidx.room.PrimaryKey
-
+@Entity(tableName = "tracker_food")
 data class TrackedFoodEntity(
     val name: String,
     val carbs: Int,

@@ -35,4 +35,10 @@ android {
 
 dependencies {
 
+    implementation(project(mapOf("path" to ":core:core_main")))
+
+    //AndroidX
+    implementation(AndroidX.Core.KTX)
+    implementation(AndroidX.Lifecycle.RUNTIME)
+    implementation(AndroidX.Navigation.RUNTIME)
 }

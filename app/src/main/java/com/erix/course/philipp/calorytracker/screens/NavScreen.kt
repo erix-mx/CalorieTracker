@@ -35,13 +35,11 @@ fun NavScreen() {
             colorBackground = MaterialTheme.colorScheme.surface
         ) {
 
-            //AnimatedNavHost()
-
             val navController = rememberNavController()
             NavHost(
                 navController = navController,
                 startDestination = Route.WELCOME,
-                //teenterTransition = { _, _ -> },
+
                 ) {
                 composable(Route.WELCOME) {
                     WelcomeScreen(onNavigate = navController::navigateTo)
