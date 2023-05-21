@@ -2,7 +2,8 @@ package com.erix.course.philipp.tracker_presentation.tracker_overview.state
 
 import com.erix.course.philipp.core_main.utils.UiText
 import com.erix.course.philipp.tracker_presentation.R
-import com.erix.models.tracker.Meal
+import com.erix.course.philipp.tracker_presentation.components.Meal
+
 import com.erix.models.tracker.MealType
 import com.erix.models.tracker.TrackedFood
 import java.time.LocalDate

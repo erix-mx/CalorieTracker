@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.erix.course.philipp.calorytracker.screens.NavScreen
-import com.erix.course.philipp.calorytracker.ui.theme.CalorieTrackerTheme
+import com.erix.course.philipp.core_ui.theme.CalorieTrackerTheme
 
 
 class BoardingActivity : ComponentActivity() {

@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.erix.course.philipp.core_ui.colors.ColorsButton
@@ -36,7 +37,8 @@ fun DaySelector(
     onPreviousDayClick: () -> Unit,
     onNextDayClick: () -> Unit,
     color: Color = Color.White,
-    colors: ColorsButton = ColorsButton()
+    colors: ColorsButton = ColorsButton(),
+    size: Dp = 42.dp,
     ) {
 
     Row(
@@ -46,9 +48,9 @@ fun DaySelector(
     ) {
         IconButton(
             modifier = Modifier
-                .size(48.dp)
                 .clip(CircleShape)
-                .background(colors.background),
+                .background(colors.background)
+                .size(size),
             onClick = onPreviousDayClick) {
             Icon(
                 modifier = Modifier
@@ -63,12 +65,13 @@ fun DaySelector(
             modifier = Modifier.wrapContentWidth(),
             text = parseDateText(date = date),
             color = color,
+            isMaxWidth = false,
         )
         IconButton(
             modifier = Modifier
-                .size(48.dp)
                 .clip(CircleShape)
-                .background(colors.background),
+                .background(colors.background)
+                .size(size),
             onClick = onNextDayClick) {
             Icon(
                 tint = colors.text,

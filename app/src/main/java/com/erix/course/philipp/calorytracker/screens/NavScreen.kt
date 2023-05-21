@@ -11,7 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.erix.course.philipp.calorytracker.extensions.navigateTo
-import com.erix.course.philipp.calorytracker.ui.theme.CalorieTrackerTheme
+import com.erix.course.philipp.core_ui.theme.CalorieTrackerTheme
 import com.erix.course.philipp.core_main.navigation.Route
 import com.erix.course.philipp.core_ui.screen_style.AppBackground
 import com.erix.course.philipp.onboarding_presentation.activity.ActivityScreen

@@ -52,6 +52,8 @@ dependencies {
     implementation(Compose.Navigation.NAV_HOST)
     implementation(Compose.Ui.MATERIAL)
 
+    //Accompanist
+    implementation(Accompanist.SystemUiController.SYSTEM_CONTROLLER)
 
 
     //Test

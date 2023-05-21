@@ -12,4 +12,5 @@
     <string name="today">Today</string>
     <string name="yesterday">Yesterday</string>
     <string name="tomorrow">Tomorrow</string>
+    <string name="add_meal">Add %s</string>
 </resources>

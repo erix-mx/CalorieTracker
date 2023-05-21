@@ -1,6 +1,7 @@
 package com.erix.course.philipp.tracker_presentation.tracker_overview.event
 
-import com.erix.models.tracker.Meal
+
+import com.erix.course.philipp.tracker_presentation.components.Meal
 import com.erix.models.tracker.TrackedFood
 
 sealed class TrackerOverviewEvent {

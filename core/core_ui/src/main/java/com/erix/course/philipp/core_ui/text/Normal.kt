@@ -16,6 +16,7 @@ fun Normal(
     modifier: Modifier = Modifier,
     text: String,
     color: Color = Color.Black,
+    textAlign: TextAlign = TextAlign.Center,
 ) {
     Text(
         text = text,
@@ -23,7 +24,7 @@ fun Normal(
         fontFamily = interFontFamily,
         fontSize = 18.sp,
         modifier = modifier.fillMaxWidth(),
-        textAlign = TextAlign.Center,
+        textAlign = textAlign,
         color = color,
     )
 }

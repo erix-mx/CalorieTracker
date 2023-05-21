@@ -29,6 +29,7 @@ import com.erix.course.philipp.core_ui.colors.ColorsTrackerBar
 import com.erix.course.philipp.core_ui.colors.ColorsTrackerInfoBar
 import com.erix.course.philipp.core_ui.colors.ColorsUnitDisplay
 import com.erix.course.philipp.core_ui.text.H3
+import com.erix.course.philipp.core_ui.theme.ItemBackgroundColors
 import com.erix.course.philipp.tracker_presentation.R
 import com.erix.course.philipp.tracker_presentation.tracker_overview.state.TrackerOverviewState
 
@@ -49,6 +50,8 @@ fun NutrientsHeader(
         amountColor = MaterialTheme.colorScheme.onSecondary,
         unitColor = MaterialTheme.colorScheme.onSecondary
     )
+
+
 
     Column(
         modifier = modifier
