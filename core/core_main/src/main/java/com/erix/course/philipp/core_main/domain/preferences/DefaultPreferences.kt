@@ -54,9 +54,9 @@ class DefaultPreferences(
         val genderString = prefs.get(Preferences.KEY_GENDER, "")
         val activityLevelString = prefs.get(Preferences.KEY_ACTIVITY_LEVEL, "")
         val goalType = prefs.get(Preferences.KEY_GOAL_TYPE, "")
-        val carbRatio = prefs.get(Preferences.KEY_CARB_RATIO, 20f)
-        val proteinRatio = prefs.get(Preferences.KEY_PROTEIN_RATIO, 50f)
-        val fatRatio = prefs.get(Preferences.KEY_FAT_RATIO, 60f)
+        val carbRatio = prefs.get(Preferences.KEY_CARB_RATIO, 40f)
+        val proteinRatio = prefs.get(Preferences.KEY_PROTEIN_RATIO, 30f)
+        val fatRatio = prefs.get(Preferences.KEY_FAT_RATIO, 30f)
 
         return UserInfo(
             gender = Gender.fromString(genderString),

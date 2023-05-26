@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.erix.course.philipp.calorytracker.screens.NavScreen
 import com.erix.course.philipp.core_ui.screen_style.AppBackground
 import com.erix.course.philipp.core_ui.theme.CalorieTrackerTheme
 import com.erix.course.philipp.tracker_presentation.tracker_overview.screens.OverViewScreen
@@ -19,19 +20,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             CalorieTrackerTheme {
-
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                ) {
-                    AppBackground(
-                        circleColor = MaterialTheme.colorScheme.onSurface,
-                        colorBackground = MaterialTheme.colorScheme.surface
-                    ) {
-                        OverViewScreen()
-                    }
-                }
-
-
+                NavScreen()
             }
         }
     }

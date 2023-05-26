@@ -60,15 +60,16 @@ dependencies {
     //Retrofit
     implementation(Retrofit.RETROFIT)
     implementation(Retrofit.LOGGER_INTERCEPTOR)
-    implementation(Retrofit.MOCHI)
+    
     implementation(Retrofit.MOCHI_CONVERTER)
+
 
     //Room
     implementation(Room.runtime)
     kapt(Room.compiler)
     implementation(Room.ktx)
 
-    ksp(Retrofit.MOCHI_CODEGEN)
+
 
     //Test
     testImplementation(Junit.Junit.JUNIT)

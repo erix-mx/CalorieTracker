@@ -8,9 +8,9 @@ data class TrackedFood(
     val protein: Int,
     val fat: Int,
     val imageUrl: String?,
-    val mealType: MealType,
+    val mealType: MealType = MealType.Breakfast,
     val amount: Int,
-    val date: LocalDate,
+    val date: LocalDate = LocalDate.now(),
     val calories: Int,
     val id: Int? = null
 )

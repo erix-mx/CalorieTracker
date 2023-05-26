@@ -7,8 +7,11 @@ object Retrofit {
     }
 
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+
     const val LOGGER_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.loggerInterceptor}"
-    const val MOCHI = "com.squareup.moshi:moshi-kotlin:${Versions.mochi}"
+
+    const val MOCHI = "com.squareup.moshi:moshi:${Versions.mochi}"
+    const val MOCHI_KOTLIN = "com.squareup.moshi:moshi-kotlin:${Versions.mochi}"
     const val MOCHI_CONVERTER = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
     const val MOCHI_CODEGEN = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.mochi}"
 }

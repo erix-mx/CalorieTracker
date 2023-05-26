@@ -2,4 +2,6 @@
 <resources>
     <string name="tag_description_big_button">App big button</string>
     <string name="tag_description_big_button_add">big button add</string>
+    <string name="tag_add_food">Add food</string>
+    <string name="tag_subtitle_picker_check">Select a portion</string>
 </resources>

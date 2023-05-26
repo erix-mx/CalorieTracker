@@ -1,5 +1,7 @@
 package com.erix.course.philipp.tracker_presentation.components
 
+import android.util.Log
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateIntAsState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -28,8 +30,13 @@ import com.erix.course.philipp.core_ui.LocalSpacing
 import com.erix.course.philipp.core_ui.colors.ColorsTrackerBar
 import com.erix.course.philipp.core_ui.colors.ColorsTrackerInfoBar
 import com.erix.course.philipp.core_ui.colors.ColorsUnitDisplay
+import com.erix.course.philipp.core_ui.colors.carbsColor
+import com.erix.course.philipp.core_ui.colors.proteinColor
 import com.erix.course.philipp.core_ui.text.H3
+import com.erix.course.philipp.core_ui.theme.CarbColor
+import com.erix.course.philipp.core_ui.theme.FatColor
 import com.erix.course.philipp.core_ui.theme.ItemBackgroundColors
+import com.erix.course.philipp.core_ui.theme.ProteinColor
 import com.erix.course.philipp.tracker_presentation.R
 import com.erix.course.philipp.tracker_presentation.tracker_overview.state.TrackerOverviewState
 
@@ -39,6 +46,9 @@ fun NutrientsHeader(
     state: TrackerOverviewState,
     backgroundColor: Color = MaterialTheme.colorScheme.background
 ) {
+
+    Log.e("NutrientsHeader", "NutrientsHeader: state = $state")
+
     val spacing = LocalSpacing.current
     val animatedCalorieCount = animateIntAsState(
         targetValue = state.totalCalories
@@ -123,10 +133,10 @@ fun NutrientsHeader(
             calorieGoal = state.caloriesGoal,
             colors = ColorsTrackerBar(
                 background = MaterialTheme.colorScheme.onSecondary.copy(alpha = alphaColorBar),
-                carbsColor = Color.Red,
-                proteinColor = Color.Green,
-                fatColor = Color.Blue,
-                exceed = Color.Yellow
+                carbsColor = CarbColor,
+                proteinColor = ProteinColor,
+                fatColor = FatColor,
+                exceed = MaterialTheme.colorScheme.error
             )
         )
         Spacer(modifier = Modifier.height(spacing.spaceLarge))
@@ -140,6 +150,7 @@ fun NutrientsHeader(
                 goal = state.carbsGoal,
                 colors = ColorsTrackerInfoBar(
                     background = MaterialTheme.colorScheme.onSecondary.copy(alpha = alphaColorBar),
+                    color = CarbColor
                 ),
                 name = "Carbs"
             ) {
@@ -152,10 +163,11 @@ fun NutrientsHeader(
             }
             NutrientBarInfo(
                 modifier = Modifier.size(90.dp),
-                value = state.totalCarbs,
-                goal = state.carbsGoal,
+                value = state.totalProtein,
+                goal = state.proteinGoal,
                 colors = ColorsTrackerInfoBar(
                     background = MaterialTheme.colorScheme.onSecondary.copy(alpha = alphaColorBar),
+                    color = ProteinColor
                 ),
                 name = "Protein"
             ) {
@@ -168,10 +180,11 @@ fun NutrientsHeader(
             }
             NutrientBarInfo(
                 modifier = Modifier.size(90.dp),
-                value = state.totalCarbs,
-                goal = state.carbsGoal,
+                value = state.totalFat,
+                goal = state.fatGoal,
                 colors = ColorsTrackerInfoBar(
                     background = MaterialTheme.colorScheme.onSecondary.copy(alpha = alphaColorBar),
+                    color = FatColor
                 ),
                 name = "Fats"
             ) {
@@ -194,14 +207,17 @@ fun NutrientsHeaderPreview() {
     NutrientsHeader(
         backgroundColor = Color.Black,
         state = TrackerOverviewState(
-            totalCarbs = 45,
-            totalProtein = 50,
-            totalFat = 60,
-            totalCalories = 345,
-            carbsGoal = 100,
-            proteinGoal = 60,
-            fatGoal = 40,
-            caloriesGoal = 600,
+
+            totalCarbs=237,
+            totalProtein=21,
+            totalFat=21,
+
+            carbsGoal=251,
+            proteinGoal=188,
+            fatGoal=84,
+
+            totalCalories=1179,
+            caloriesGoal=2510
         )
     )
 }

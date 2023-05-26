@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.ButtonColors
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.ModalBottomSheetLayout
 import androidx.compose.material.ModalBottomSheetState
@@ -27,43 +28,7 @@ import com.erix.course.philipp.core_ui.items.ItemValue
 import com.erix.course.philipp.core_ui.text.H1
 import com.erix.course.philipp.core_ui.text.H2
 import com.erix.course.philipp.core_ui.text.H3
-
-@OptIn(ExperimentalMaterialApi::class)
-@Composable
-fun PickerSheetDialog(
-    modalState: ModalBottomSheetState,
-    values: List<Int>,
-    unit: String,
-    title: String,
-    sheetContentColor: Color = Color.White,
-    color: Color = Color.Black,
-    onValueSelected: (Int) -> Unit = {},
-    content: @Composable () -> Unit = {}
-) {
-    val dimensions = LocalSpacing.current
-    ModalBottomSheetLayout(
-        modifier = Modifier.heightIn(dimensions.maxHeightBottomSheet),
-        sheetState = modalState,
-        sheetShape = RoundedCornerShape(
-            topStart = dimensions.bottomSheetCorner,
-            topEnd = dimensions.bottomSheetCorner
-        ),
-        sheetContentColor = sheetContentColor,
-        sheetContent = {
-            BodyPickerSheetDialog(
-                values = values,
-                unit = unit,
-                onValueSelected = onValueSelected,
-                maxHeight = dimensions.maxHeightBottomSheet,
-                title = title,
-                color = color,
-                sheetContentColor = sheetContentColor,
-            )
-        }
-    ) {
-        content()
-    }
-}
+import com.erix.course.philipp.core_ui.theme.SheetButtonColors
 
 
 @Composable

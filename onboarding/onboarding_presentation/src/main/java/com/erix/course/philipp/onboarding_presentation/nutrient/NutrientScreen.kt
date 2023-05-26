@@ -12,6 +12,7 @@ import androidx.compose.material.ModalBottomSheetValue
 import androidx.compose.material.rememberModalBottomSheetState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -41,10 +42,14 @@ fun NutrientScreen(
     viewModel: NutrientViewModel = hiltViewModel(),
     onNavigate: (UiEvent) -> Unit
 ) {
-    val state = viewModel.state
 
+    LaunchedEffect(key1 = true,) {
+        viewModel.uiEvent.collect {
+            onNavigate(it)
+        }
+    }
     NutrientScreenContent(
-        state = state,
+        state = viewModel.state,
         nutrientEvent = viewModel::dispatcherEvent,
         onNavigate = viewModel::onNavigate
     )
@@ -175,7 +180,7 @@ fun NutrientScreenContent(
                         backgroundColor = MaterialTheme.colorScheme.primary,
                         textColor = MaterialTheme.colorScheme.secondary,
                     ) {
-                        onNavigate(UiEvent.NavigateTo(Route.WELCOME))
+                        onNavigate(UiEvent.NavigateTo(Route.TRACKER_OVERVIEW))
                     }
                 }
             }

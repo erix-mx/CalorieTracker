@@ -1,11 +1,13 @@
-package com.erix.course.philipp.tracker_presentation.components
+package com.erix.course.philipp.core_ui.form
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.MaterialTheme.colors
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -17,28 +19,43 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.erix.course.philipp.tracker_presentation.R
+import com.erix.course.philipp.core_ui.R
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SearchBox(
+fun SearchEditText(
     modifier: Modifier = Modifier,
     text: String,
     placeholder: String,
     backgroundColor: Color = Color.Black,
     textColor: Color = Color.White,
     onTextChanged: (String) -> Unit,
+    onClear: () -> Unit = {},
+    onSearch: () -> Unit = {},
 ) {
     TextField(
         modifier = modifier
+            .fillMaxWidth()
             .height(56.dp)
             .clip(shape = CircleShape)
             .background(color = backgroundColor),
         value = text,
+        singleLine = true,
+        keyboardActions = KeyboardActions(
+            onSearch = {
+                onSearch()
+                defaultKeyboardAction(ImeAction.Search)
+            }
+        ),
+        keyboardOptions = KeyboardOptions(
+            imeAction = ImeAction.Search,
+        ),
         onValueChange = onTextChanged,
-        placeholder = { Text(placeholder) },
+        placeholder = { Text(placeholder, color = textColor.copy(alpha = 0.5f)) },
         colors = TextFieldDefaults.textFieldColors(
             containerColor = backgroundColor,
             textColor = textColor,
@@ -49,7 +66,7 @@ fun SearchBox(
         trailingIcon = {
             if (text.isNotEmpty()) {
                 IconButton(
-                    onClick = { onTextChanged("") },
+                    onClick = { onClear() },
                     content = {
                         Icon(
                             modifier = Modifier.padding(10.dp),
@@ -78,7 +95,7 @@ fun SearchBox(
 @Composable
 @Preview
 fun SearchBoxPreview() {
-    SearchBox(
+    SearchEditText(
         text = "Hello World",
         placeholder = "Search",
         onTextChanged = {}
@@ -88,7 +105,7 @@ fun SearchBoxPreview() {
 @Composable
 @Preview
 fun SearchBoxPreviewEmpty() {
-    SearchBox(
+    SearchEditText(
         text = "",
         placeholder = "Search",
         onTextChanged = {}

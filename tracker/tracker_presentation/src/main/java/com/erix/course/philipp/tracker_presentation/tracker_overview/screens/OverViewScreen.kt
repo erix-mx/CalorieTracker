@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -18,6 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.erix.course.philipp.core_main.utils.UiEvent
 import com.erix.course.philipp.core_ui.LocalSpacing
 import com.erix.course.philipp.core_ui.buttons.BigButtonAdd
 import com.erix.course.philipp.core_ui.colors.ColorsButton
@@ -25,22 +27,33 @@ import com.erix.course.philipp.core_ui.theme.CalorieTrackerTheme
 import com.erix.course.philipp.core_ui.theme.ItemBackgroundColors
 import com.erix.course.philipp.tracker_presentation.components.ExpandableMeal
 import com.erix.course.philipp.core_ui.theme.ItemInfoGramsColors
+import com.erix.course.philipp.core_ui.theme.ItemTrackedFoodColors
 import com.erix.course.philipp.tracker_presentation.R
 import com.erix.course.philipp.tracker_presentation.components.DaySelector
+import com.erix.course.philipp.tracker_presentation.components.ItemTrackedFood
 import com.erix.course.philipp.tracker_presentation.components.NutrientsHeader
 import com.erix.course.philipp.tracker_presentation.tracker_overview.event.TrackerOverviewEvent
 import com.erix.course.philipp.tracker_presentation.tracker_overview.state.TrackerOverviewState
 import com.erix.course.philipp.tracker_presentation.tracker_overview.viewmodel.TrackerOverviewViewModel
+import com.erix.models.tracker.MealType
+import com.erix.models.tracker.TrackedFood
+import java.time.LocalDate
 
 @Composable
 fun OverViewScreen(
-    viewModel: TrackerOverviewViewModel = hiltViewModel()
+    viewModel: TrackerOverviewViewModel = hiltViewModel(),
+    onNavigate: (UiEvent) -> Unit = {},
 ) {
-    val state = viewModel.state
-    val onEvent = viewModel::onEvent
+
+    LaunchedEffect(key1 = true, ) {
+        viewModel.uiEvent.collect {
+            onNavigate(it)
+        }
+    }
+
     OverViewScreeContent(
-        state = state,
-        onEvent = onEvent
+        state = viewModel.state,
+        onEvent = viewModel::onEvent
     )
 }
 
@@ -105,6 +118,24 @@ fun OverViewScreeContent(
                         onEvent(TrackerOverviewEvent.OnToggleMealClick(meal))
                     },
                     content = {
+                        val foods = state.trackedFoods.filter { it.mealType == meal.mealType }
+                        Column {
+                            foods.forEach { food ->
+                                ItemTrackedFood(
+                                    onDelete = {
+                                        onEvent(TrackerOverviewEvent.OnDeleteTrackedFoodClick(food))
+                                    },
+                                    colors = ItemTrackedFoodColors(
+                                        text = MaterialTheme.colorScheme.onSecondary,
+                                        background = Color.Transparent,
+                                    ),
+                                    trackedFood = food
+                                )
+                                Spacer(modifier = Modifier.height(spacing.spaceMedium))
+                            }
+                        }
+
+                        Spacer(modifier = Modifier.height(spacing.spaceMedium))
                         BigButtonAdd(
                             borderColor = MaterialTheme.colorScheme.primary,
                             textColor = MaterialTheme.colorScheme.primary,
@@ -113,12 +144,7 @@ fun OverViewScreeContent(
                                 meal.name.asString(context)
                             ),
                             onClick = {
-                                /*onNavigateToSearch(
-                                    meal.name.asString(context),
-                                    state.date.dayOfMonth,
-                                    state.date.monthValue,
-                                    state.date.year
-                                )*/
+                                onEvent(TrackerOverviewEvent.OnAddFoodClick(meal))
                             },
                             modifier = Modifier.fillMaxWidth()
                         )

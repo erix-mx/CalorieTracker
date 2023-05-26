@@ -13,4 +13,7 @@
     <string name="yesterday">Yesterday</string>
     <string name="tomorrow">Tomorrow</string>
     <string name="add_meal">Add %s</string>
+    <string name="nutrient_info">"%s Kcal/%sg "</string>
+    <string name="no_results_found">No results found for \n</string>
+    <string name="error_occurred">There was a problem connecting to server, please try again later.</string>
 </resources>

@@ -66,7 +66,7 @@ fun ExpandableMeal(
                         text = meal.name.asString(context),
                         color = tagColor,
                         textAlign = TextAlign.Start,
-                        size = 23.sp,
+                        size = 19.sp,
                     )
                     Normal(
                         text = "${meal.calories} Kcal",

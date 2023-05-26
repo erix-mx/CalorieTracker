@@ -75,6 +75,10 @@ dependencies {
     implementation(Compose.Ui.MATERIAL)
     implementation(Compose.Ui.MATERIAL3)
 
+    //Coil
+    implementation(Coil.COIL)
+    implementation(Coil.COIL_COMPOSE)
+
     //Test
     testImplementation(Junit.Junit.JUNIT)
     androidTestImplementation(Junit.Junit.JUNIT_EXT)

@@ -21,6 +21,7 @@ fun H2(
     modifier: Modifier = Modifier,
     text: String,
     color: Color = Color.Black,
+    textAlign: TextAlign = TextAlign.Center,
 ) {
     Text(
         text = text,
@@ -30,7 +31,7 @@ fun H2(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 21.dp),
-        textAlign = TextAlign.Center,
+        textAlign = textAlign,
         color = color,
     )
 }
@@ -40,6 +41,7 @@ fun H2(
     modifier: Modifier = Modifier,
     text: AnnotatedString,
     color: Color = Color.Black,
+    textAlign: TextAlign = TextAlign.Center,
 ) {
     Text(
         text = text,
@@ -49,7 +51,7 @@ fun H2(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 21.dp),
-        textAlign = TextAlign.Center,
+        textAlign = textAlign,
         color = color,
     )
 }

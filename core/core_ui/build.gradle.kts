@@ -55,6 +55,8 @@ dependencies {
     //Accompanist
     implementation(Accompanist.SystemUiController.SYSTEM_CONTROLLER)
 
+    //Lottie
+    implementation(Lottie.LOTTIE)
 
     //Test
     testImplementation(Junit.Junit.JUNIT)

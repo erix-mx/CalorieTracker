@@ -25,6 +25,8 @@ private val DarkColorScheme = darkColorScheme(
     background = avocadoDark,
     onSecondary = avocadoLight,
     onSurface = avocadoGray,
+
+    onBackground = black,
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -36,6 +38,8 @@ private val LightColorScheme = lightColorScheme(
     surface = avocadoLighter,
     onSurface = avocadoGreenLight,
     onSecondary = avocadoDark,
+
+    onBackground = white,
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
