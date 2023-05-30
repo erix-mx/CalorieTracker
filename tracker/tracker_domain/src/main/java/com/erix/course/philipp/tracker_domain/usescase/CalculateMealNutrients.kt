@@ -9,7 +9,9 @@ import com.erix.models.tracker.MealType
 import com.erix.models.tracker.TrackedFood
 import kotlin.math.roundToInt
 
-class CalculateMealNutrients (private val preferences: Preferences) {
+class CalculateMealNutrients (
+    private val preferences: Preferences
+    ) {
 
     operator fun invoke(trackedFoods: List<TrackedFood>): Result {
         val allNutrients = trackedFoods
@@ -32,9 +34,9 @@ class CalculateMealNutrients (private val preferences: Preferences) {
 
         val userInfo = preferences.loadUserInfo()
         val caloryGoal = dailyCaloryRequirement(userInfo)
-        val carbsGoal = (caloryGoal * userInfo.carbRatio / 4f).roundToInt()
-        val proteinGoal = (caloryGoal * userInfo.proteinRatio / 4f).roundToInt()
-        val fatGoal = (caloryGoal * userInfo.fatRatio / 9f).roundToInt()
+        val carbsGoal = (caloryGoal * (userInfo.carbRatio/100) / 4f).roundToInt()
+        val proteinGoal = (caloryGoal * (userInfo.proteinRatio/100) / 4f).roundToInt()
+        val fatGoal = (caloryGoal * (userInfo.fatRatio/100) / 9f).roundToInt()
 
         return Result(
             carbsGoal = carbsGoal,

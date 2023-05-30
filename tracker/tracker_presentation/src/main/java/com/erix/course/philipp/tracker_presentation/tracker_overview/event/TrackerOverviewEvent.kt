@@ -11,5 +11,7 @@ sealed class TrackerOverviewEvent {
     data class OnDeleteTrackedFoodClick(val trackedFood: TrackedFood): TrackerOverviewEvent()
     data class OnAddFoodClick(val meal: Meal): TrackerOverviewEvent()
 
+    object OnSettingsClick: TrackerOverviewEvent()
+
 
 }

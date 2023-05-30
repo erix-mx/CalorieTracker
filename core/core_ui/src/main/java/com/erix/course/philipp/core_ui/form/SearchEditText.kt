@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
@@ -39,6 +40,7 @@ fun SearchEditText(
 ) {
     TextField(
         modifier = modifier
+            .testTag("search_textfield")
             .fillMaxWidth()
             .height(56.dp)
             .clip(shape = CircleShape)

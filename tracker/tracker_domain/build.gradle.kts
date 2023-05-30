@@ -38,6 +38,13 @@ android {
     kapt {
         generateStubs = true
     }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
 }
 
 dependencies {
@@ -57,4 +64,7 @@ dependencies {
     //Test
     testImplementation(Junit.Junit.JUNIT)
     androidTestImplementation(Junit.Junit.JUNIT_EXT)
+
+    //Mockk
+    testImplementation(Mockk.MOCKK)
 }

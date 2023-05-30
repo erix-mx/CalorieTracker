@@ -16,7 +16,7 @@ android {
         versionCode =  Project.versionCode
         versionName = Project.versionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.erix.course.philipp.calorytracker.HiltTestRunner"
         vectorDrawables.useSupportLibrary = true
     }
 
@@ -43,11 +43,15 @@ android {
         kotlinCompilerExtensionVersion = Compose.Versions.COMPILER
     }
 
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/LICENSE.md"
+            excludes += "/META-INF/LICENSE-notice.md"
+
         }
     }
+
 }
 
 dependencies {
@@ -58,10 +62,9 @@ dependencies {
     implementation(project(Modules.CORE_UI))
     implementation(project(Modules.ONBOARDING_PRESENTATION))
     implementation(project(Modules.TRACKER_PRESENTATION))
+    implementation(project(Modules.TRACKER_DATA))
+    implementation(project(Modules.TRACKER_DOMAIN))
 
-    //implementation(project(Modules.TRACKER_DATA))
-    //implementation(project(Modules.TRACKER_DOMAIN))
-    implementation(project(Modules.TRACKER_PRESENTATION))
 
     //Hilt
     implementation(Hilt.ANDROID.android)
@@ -102,6 +105,12 @@ dependencies {
 
     debugImplementation(Compose.Test.TOOLING)
     debugImplementation(Compose.Test.MANIFEST)
+
+    kaptAndroidTest(Hilt.COMPILER.compiler)
+    androidTestImplementation(Hilt.Test.hiltTesting)
+
+    androidTestImplementation (Compose.Test.NAVIGATION)
+
 }
 
 kapt {

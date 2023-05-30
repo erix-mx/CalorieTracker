@@ -16,4 +16,8 @@ object Hilt {
         const val navigation = "androidx.hilt:hilt-navigation-compose:$version"
     }
 
+    object Test {
+        const val hiltTesting = "com.google.dagger:hilt-android-testing:$VERSION"
+    }
+
 }

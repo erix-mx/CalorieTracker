@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.erix.course.philipp.core_ui.LocalSpacing
@@ -26,7 +27,7 @@ fun TrackableFoodItem(
     onAmountChange: (String) -> Unit = {},
     onTrack: () -> Unit = {},
 ) {
-
+    //modifier.testTag("TrackableFoodItem")
     val food = trackableFoodUiState.food
 
     Box(

@@ -1,19 +1,21 @@
 package com.erix.course.philipp.tracker_presentation.components
 
-import android.util.Log
-import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateIntAsState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,12 +32,9 @@ import com.erix.course.philipp.core_ui.LocalSpacing
 import com.erix.course.philipp.core_ui.colors.ColorsTrackerBar
 import com.erix.course.philipp.core_ui.colors.ColorsTrackerInfoBar
 import com.erix.course.philipp.core_ui.colors.ColorsUnitDisplay
-import com.erix.course.philipp.core_ui.colors.carbsColor
-import com.erix.course.philipp.core_ui.colors.proteinColor
 import com.erix.course.philipp.core_ui.text.H3
 import com.erix.course.philipp.core_ui.theme.CarbColor
 import com.erix.course.philipp.core_ui.theme.FatColor
-import com.erix.course.philipp.core_ui.theme.ItemBackgroundColors
 import com.erix.course.philipp.core_ui.theme.ProteinColor
 import com.erix.course.philipp.tracker_presentation.R
 import com.erix.course.philipp.tracker_presentation.tracker_overview.state.TrackerOverviewState
@@ -44,10 +43,9 @@ import com.erix.course.philipp.tracker_presentation.tracker_overview.state.Track
 fun NutrientsHeader(
     modifier: Modifier = Modifier,
     state: TrackerOverviewState,
-    backgroundColor: Color = MaterialTheme.colorScheme.background
+    backgroundColor: Color = MaterialTheme.colorScheme.background,
+    onClickSettings: () -> Unit = {}
 ) {
-
-    Log.e("NutrientsHeader", "NutrientsHeader: state = $state")
 
     val spacing = LocalSpacing.current
     val animatedCalorieCount = animateIntAsState(
@@ -61,8 +59,6 @@ fun NutrientsHeader(
         unitColor = MaterialTheme.colorScheme.onSecondary
     )
 
-
-
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -75,16 +71,34 @@ fun NutrientsHeader(
             .background(backgroundColor)
             .padding(
                 horizontal = spacing.spaceLarge,
-                vertical = spacing.spaceExtraLarge
+                vertical = spacing.spaceLarge
             ),
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
-        Image(
-            modifier = Modifier
-                .size(76.dp),
-            painter = painterResource(id = R.drawable.ic_avocado_face),
-            contentDescription = "Avocado face"
-        )
+    ) {
+        Box(
+            contentAlignment = Alignment.TopCenter,
+        ) {
+            Image(
+                modifier = Modifier
+                    .size(76.dp),
+                painter = painterResource(id = R.drawable.ic_avocado_face),
+                contentDescription = "Avocado face"
+            )
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.End
+            ) {
+                IconButton(onClick = onClickSettings) {
+                    Icon(
+                        tint = MaterialTheme.colorScheme.onSecondary,
+                        painter = painterResource(id = R.drawable.ic_settings_a),
+                        contentDescription = null
+                    )
+                }
+            }
+        }
 
         Spacer(modifier = Modifier.size(spacing.spaceMedium))
 
@@ -208,16 +222,16 @@ fun NutrientsHeaderPreview() {
         backgroundColor = Color.Black,
         state = TrackerOverviewState(
 
-            totalCarbs=237,
-            totalProtein=21,
-            totalFat=21,
+            totalCarbs = 237,
+            totalProtein = 21,
+            totalFat = 21,
 
-            carbsGoal=251,
-            proteinGoal=188,
-            fatGoal=84,
+            carbsGoal = 251,
+            proteinGoal = 188,
+            fatGoal = 84,
 
-            totalCalories=1179,
-            caloriesGoal=2510
+            totalCalories = 1179,
+            caloriesGoal = 2510
         )
     )
 }

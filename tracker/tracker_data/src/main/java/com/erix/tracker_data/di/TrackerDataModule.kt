@@ -40,9 +40,6 @@ object TrackerDataModule {
     @Provides
     @Singleton
     fun provideApiService(client: OkHttpClient): ApiOpenFoot {
-        /*val moshi = Moshi.Builder()
-            .add(KotlinJsonAdapterFactory())
-            .build()*/
 
         return Retrofit.Builder()
             .baseUrl(BASE_URL)

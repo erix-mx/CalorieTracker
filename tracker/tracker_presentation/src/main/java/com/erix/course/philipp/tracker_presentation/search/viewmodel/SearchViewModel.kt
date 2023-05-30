@@ -35,7 +35,7 @@ class SearchViewModel @Inject constructor(
     val uiEvent = _uiEvent.receiveAsFlow()
 
     fun onNavigate(event: UiEvent) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             _uiEvent.send(event)
         }
     }
@@ -99,11 +99,11 @@ class SearchViewModel @Inject constructor(
         }
     }
 
-    private fun executeSearch(){
+    private fun executeSearch(typeDelay: Long = 1_000L){
         state = state.copy(isSearching = true, hasError = false)
         searchJob?.cancel()
         searchJob = viewModelScope.launch(Dispatchers.IO) {
-            delay(1_000)
+            delay(typeDelay)
 
             trackerUseCases
                 .searchFood(state.query)
@@ -121,4 +121,5 @@ class SearchViewModel @Inject constructor(
                 }
         }
     }
+
 }

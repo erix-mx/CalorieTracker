@@ -37,6 +37,13 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Compose.Versions.COMPILER
     }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
 }
 
 dependencies {

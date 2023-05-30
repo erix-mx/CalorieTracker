@@ -28,6 +28,8 @@ object Compose {
         const val JUNIT4 = "androidx.compose.ui:ui-test-junit4"
         const val TOOLING = "androidx.compose.ui:ui-tooling"
         const val MANIFEST = "androidx.compose.ui:ui-test-manifest"
+
+        const val NAVIGATION = "androidx.navigation:navigation-testing:2.5.3"
     }
 
 }

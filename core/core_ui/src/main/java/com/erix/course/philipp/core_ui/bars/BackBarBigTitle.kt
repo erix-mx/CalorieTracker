@@ -43,7 +43,7 @@ fun BackBarBigTitle(
             Icon(
                 modifier = Modifier.size(36.dp),
                 painter = painterResource(id = R.drawable.ic_back),
-                contentDescription = "Back",
+                contentDescription = "back-to-previous-screen",
                 tint = tint
             )
         }

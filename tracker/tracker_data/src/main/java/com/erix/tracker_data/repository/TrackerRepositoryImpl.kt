@@ -30,8 +30,6 @@ class TrackerRepositoryImpl (
                 pageSize = pageSize
             )
 
-            Log.e("TrackerRepositoryImpl", "♻️ ${searchDto.products.size} ♻️ searchFood: $searchDto")
-
             Result.success(
                 searchDto.products
                     .filter {
@@ -47,7 +45,7 @@ class TrackerRepositoryImpl (
 
             )
         } catch (e: Exception) {
-            Log.e("TrackerRepositoryImpl", "❌searchFood: ${e.message}")
+
             e.printStackTrace()
             Result.failure(e)
         }
@@ -70,5 +68,6 @@ class TrackerRepositoryImpl (
             entities.map { it.toTrackedFood() }
         }
     }
+
 
 }
