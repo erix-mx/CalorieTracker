@@ -2,7 +2,7 @@
 
 # Calories Tracker - Android App
 
-[se-006.mp4](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/demo-curse-felipe.mp4?alt=media&token=0001d6a6-0b4f-4bd6-b22c-e02d8791ff62)
+[se-006.mp4](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/demo-curse-felipe.mp4)
 
 ![SS2@1x.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SS2%401x.png?alt=media&token=65c6e70c-f5d7-4966-9203-332307adabb9)
 
