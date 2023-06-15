@@ -1,8 +1,5 @@
-# Readme - Calories Tracker
-
 # Calories Tracker - Android App
 
-[se-006.mp4](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/demo-curse-felipe.mp4)
 
 ![SS2@1x.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SS2%401x.png?alt=media&token=65c6e70c-f5d7-4966-9203-332307adabb9)
 
@@ -56,10 +53,10 @@ Fue complicado entender la configuración de los archivos build.gradle.kts, pero
 
 ![SS1@1x.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SS1%401x.png?alt=media&token=48a42ee4-5a39-47fb-81cd-3ae303b0bf89)
 
-![SS3@1x.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SS3%401x.png?alt=media&token=8c35446a-d1a5-4c8a-8a19-cdc6420a5e33g)
+![SS3@1x.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SS3%401x.png?alt=media&token=8c35446a-d1a5-4c8a-8a19-cdc6420a5e33)
 
 ![SS4@1x.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SS4%401x.png?alt=media&token=eb3e1444-0a41-42a2-8a99-9f16b1e7d69f)
 
-![SS5@1x.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SS1%401x.png?alt=media&token=48a42ee4-5a39-47fb-81cd-3ae303b0bf89)
+![SS5@1x.png](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/SS5%401x.png?alt=media&token=dad010ba-a9b1-4ae9-a9b3-11af7b259728)
 
 ## Muchas gracias por compartir ❤️
