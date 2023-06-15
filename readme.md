@@ -20,7 +20,7 @@ De las muchas ventajas de trabajar con módulos es la posibilidad de dividir la 
 
 La modularización es una práctica para organizar una base de código en partes con acoplamiento bajo y elementos independientes. Cada parte es un módulo. Cada módulo es independiente y tiene un propósito claro. Si divides un problema en subproblemas más pequeños y fáciles de resolver, se reduce la complejidad de diseñar y mantener un sistema grande.
 
-![Untitled](Readme%20-%20Calories%20Tracker%201e0c6aae20d948b2a04147c768d5344a/Untitled.png)
+![Untitled](https://firebasestorage.googleapis.com/v0/b/basic-calculator-001-c2092.appspot.com/o/1_sample_dep_graph.png?alt=media&token=18d8bd62-c3de-4ad4-9811-69e0386e181d)
 
 Figura 1: Representación para dividir los feactures de una aplicación.
 
