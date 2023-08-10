@@ -15,9 +15,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up JDK
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
-          java-version: 11
+          java-version: 17
+          distribution: 'temurin'
+          server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+          settings-path: ${{ github.workspace }} # location for the settings.xml file
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -31,7 +34,7 @@ jobs:
           EMULATOR_VERSION: 30 # Adjust the emulator version as needed
 
       - name: Upload Test Results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v1
         with:
           name: test-results
           path: app/build/outputs/androidTest-results/connected
