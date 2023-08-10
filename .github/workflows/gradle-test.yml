@@ -1,4 +1,4 @@
-name: Android UI Tests
+name: Android Unit Tests
 
 on:
   push:
