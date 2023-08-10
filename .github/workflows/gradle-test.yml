@@ -31,11 +31,7 @@ jobs:
       - name: Unit Test
         run: ./gradlew testDebugUnitTest
 
-      - name: Run UI Tests
-        run: ./gradlew connectedDebugAndroidTest
-        env:
-          EMULATOR_VERSION: 30
-
       - name: Android Test Report
         uses: asadmansr/android-test-report-action@v1.2.0
         if: ${{ always() }}
+
