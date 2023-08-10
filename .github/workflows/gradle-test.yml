@@ -3,7 +3,7 @@ name: Android UI Tests
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -35,4 +35,3 @@ jobs:
         with:
           name: test-results
           path: app/build/outputs/androidTest-results/connected
-
